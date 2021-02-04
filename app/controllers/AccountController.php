@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\AccountModel;
-use Route\Router;
+use Core\View;
 
 class AccountController {
   /*
@@ -31,6 +31,6 @@ class AccountController {
     $account = new AccountModel();
     $result = $account->find($id);
 
-    echo $result['name'];
+    View::render('show_account.php', ['account' => $result]);
   }
 }
